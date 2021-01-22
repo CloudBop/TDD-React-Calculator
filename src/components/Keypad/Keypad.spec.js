@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 import Keypad from './Keypad'
 
 describe('Keypad Unit Tests', () => {
@@ -18,13 +18,10 @@ describe('Keypad Unit Tests', () => {
 
   it('Should compare against snapshot <Keypad/>', () => expect(wrapper).toMatchSnapshot())
   
-  it('should render three <div />', () => {
-    expect(wrapper.find('div').length).toEqual(3);
+  it('should render 4 <div />', () => {
+    expect(wrapper.find('div').length).toEqual(4);
   });
 
-  
-  
-  
 
   // start with shallow (shallow render)
   // Use mount, for lifecyle componentDidMount or componentDidUpdate
