@@ -22,22 +22,29 @@ describe('Keypad Unit Tests', () => {
     expect(wrapper.find('div').length).toEqual(3);
   });
 
+  
+  
+  
+
+  // start with shallow (shallow render)
+  // Use mount, for lifecyle componentDidMount or componentDidUpdate
+  // DOM rendering, component lifecycle, and the behavior of child components
   it('renders the values of numbers', () => {
     wrapper.setProps({numbers: ['0', '1', '2']});
     expect(wrapper.find('.numbers-container').text()).toEqual('012');
   });
-
   it('renders the values of operators', () => {
     wrapper.setProps({operators: ['+', '-', '*', '/']});
     expect(wrapper.find('.operators-container').text()).toEqual('+-*/');
   });
+
 
   it('should render an instance of the Key component', () => {
     expect(wrapper.find('Key').length).toEqual(1);
   });
 
   // 
-  it('should render an instance of the Key component for each index of numbers, operators, and the submit Key', () => {
+  it('(*1) - should render an instance of the Key component for each index of numbers, operators, and the submit Key', () => {
     const numbers = ['0', '1'];
     const operators = ['+', '-'];
     const submit = 1;
