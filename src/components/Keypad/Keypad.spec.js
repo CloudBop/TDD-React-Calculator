@@ -26,4 +26,9 @@ describe('Keypad Unit Tests', () => {
     wrapper.setProps({numbers: ['0', '1', '2']});
     expect(wrapper.find('.numbers-container').text()).toEqual('012');
   });
+
+  it('renders the values of operators', () => {
+    wrapper.setProps({numbers: ['+', '-', '*', '/']});
+    expect(wrapper.find('.operators-container').text()).toEqual('012');
+  });
 });
