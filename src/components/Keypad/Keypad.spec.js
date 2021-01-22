@@ -16,7 +16,7 @@ describe('Keypad Unit Tests', () => {
     />
   ));
 
-  // when ready... it('Should compare against snapshot <Display/>', () => expect(wrapper).toMatchSnapshot())
+  it('Should compare against snapshot <Keypad/>', () => expect(wrapper).toMatchSnapshot())
   
   it('should render a <div />', () => {
     expect(wrapper.find('div').length).toEqual(1);
