@@ -1,7 +1,9 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import Calculator from './Calculator';
-import Display from '../Display/Display'
+import Display from '../Display/Display';
+import Keypad from '../Keypad/Keypad';
+
 describe('Calculator', () => {
   let wrapper;
 
@@ -11,8 +13,17 @@ describe('Calculator', () => {
     expect(wrapper.find('div').length).toEqual(1);
   });
 
-  it("should render the Display Component", ()=> {
+  it("should render the Display + Keypad Component", ()=> {
     // access the state variables and methods of Calculator by utilizing the instance method on the wrapper object.
-    expect(wrapper.containsMatchingElement(<Display displayValue={wrapper.instance().state.displayValue}/>)).toEqual(true)
+    expect(wrapper.containsMatchingElements([ 
+      // check for these two components in DOMtree
+      <Display displayValue={wrapper.instance().state.displayValue}/>,
+      <Keypad 
+        callOperator={wrapper.instance().callOperator}
+        numbers={wrapper.instance().state.numbers}
+        operators={wrapper.instance().state.operators}
+        updateDipslay={wrapper.instance().updateDipslay}
+      />
+    ])).toEqual(true)
   })
 });
