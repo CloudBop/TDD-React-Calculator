@@ -12,6 +12,7 @@ describe('Calculator', () => {
   });
 
   it("should render the Display Component", ()=> {
-    expect(wrapper.containsMatchingElement(<Display/>)).toEqual(true)
+    // access the state variables and methods of Calculator by utilizing the instance method on the wrapper object.
+    expect(wrapper.containsMatchingElement(<Display displayValue={wrapper.instance().state.displayValue}/>)).toEqual(true)
   })
 });
