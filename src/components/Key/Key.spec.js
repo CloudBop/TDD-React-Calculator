@@ -19,7 +19,7 @@ describe('Key', () => {
     expect(wrapper.find('div').length).toEqual(1);
   });
 
-  it('should render the value of keyValue prop', () => {
+  it('should render keyValue prop', () => {
     wrapper.setProps({ keyValue: 'test' });
     expect(wrapper.text()).toEqual('test');
   });
