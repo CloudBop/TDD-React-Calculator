@@ -5,7 +5,7 @@ import Display from './Display'
 describe('Calculator', () => {
   let wrapper;
 
-  beforeEach(() => wrapper = shallow(<Display />));
+  beforeEach(() => wrapper = shallow(<Display displayValue={""} />));
   // it('Should compare against snapshot <Calculator/>', () => expect(wrapper).toMatchSnapshot())
   
   it('should render a <div />', () => {
