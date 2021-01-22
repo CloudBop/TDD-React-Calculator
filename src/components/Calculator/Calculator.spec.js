@@ -15,14 +15,15 @@ describe('Calculator', () => {
 
   it("should render the Display + Keypad Component", ()=> {
     // access the state variables and methods of Calculator by utilizing the instance method on the wrapper object.
-    expect(wrapper.containsMatchingElements([ 
+    expect(wrapper.containsAllMatchingElements([ 
       // check for these two components in DOMtree
       <Display displayValue={wrapper.instance().state.displayValue}/>,
       <Keypad 
         callOperator={wrapper.instance().callOperator}
         numbers={wrapper.instance().state.numbers}
         operators={wrapper.instance().state.operators}
-        updateDipslay={wrapper.instance().updateDipslay}
+        setOperator={wrapper.instance().setOperator}
+        updateDisplay={wrapper.instance().updateDisplay}
       />
     ])).toEqual(true)
   })
